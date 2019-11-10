@@ -29,6 +29,45 @@
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main view-init safe-areas" data-url="/"></div>
 
+    <!-- Login Screen -->
+    <div class="login-screen" id="login-screen">
+      <div class="view">
+        <div class="page">
+          <div class="page-content login-screen-content">
+            <div class="login-screen-title">Login</div>
+            <form class="form-store-data" id="login-info">
+              <div class="list">
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Nomor HP</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="contact" placeholder="Nomor HP">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Password</div>
+                      <div class="item-input-wrap">
+                        <input type="password" name="password" placeholder="Password">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="block">
+                    <a class="button button-raised button-fill button-round" id="login">Masuk</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
   
   <script src="cordova.js"></script>

@@ -10,16 +10,16 @@
   "keywords": [
     "ecosystem:cordova"
   ],
-  "author": "Apache Cordova Team",
+  "author": "HARNIC ID",
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-android": "^8.1.0",
+    "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.0.1",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-barcodescanner": "^0.7.4",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-keyboard": "^1.2.0",
-    "cordova-plugin-qrscanner": "^3.0.1",
     "cordova-plugin-splashscreen": "^5.0.3",
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-plugin-wkwebview-engine": "^1.2.1",
@@ -32,12 +32,12 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-wkwebview-file-xhr": {},
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-barcodescanner": {},
-      "cordova-plugin-qrscanner": {}
+      "cordova-plugin-barcodescanner": {}
     },
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "browser"
     ]
   },
   "devDependencies": {
