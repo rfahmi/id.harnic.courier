@@ -1,112 +1,146 @@
 <template>
-    <div class="page" data-name="cod">
-      <!-- Static Navbar -->
-  <div class="navbar no-shadow">
-    <div class="navbar-bg"></div>
-    <div class="navbar-inner">
-      <div class="left">
-        <a class="link back">
-          <i class="icon icon-back"></i>
-          <span class="if-not-md">Back</span>
-        </a>
-      </div>
-      <div class="title">Setoran COD</div>
-      <div class="right"></div>
-    </div>
-  </div>
-      <div class="page-content hide-navbar-on-scroll">
-
-        <div class="block" id="all_finish" style="display: none;">
-          <div class="row">
-            <div class="col-100 text-align-center">
-              <i class="icon material-icons color-green" style="font-size: 100px;">check_circle</i>
-            </div>
-            <div class="col-100 text-align-center">
-              <h1>Semua Beress..</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="block" id="nominal" style="display: none;">
-          <div class="row">
-            <div class="col-100" style="text-align: center;">
-              <small>Jumlah Setoran Anda</small>
-              <h1 class="no-margin-top">Rp. <span id="total"></span></h1>
-            </div>
-          </div>
-        </div>
-
-    
-        <div class="block" id="list_trx" style="display: none;">
-          <div class="list media-list">
-            <ul id="trx">
-            </ul>
-          </div>
-        </div>
-
-        <div class="fab fab-extended fab-right-bottom" id="setor_button" style="display: none;position: fixed;">
-          <a class="sheet-open" href="#" data-sheet=".confirm-pin">
-            <i class="icon material-icons">arrow_forward</i>
-            <div class="fab-text">Setor <span id="total_selected"></span></div>
+  <div class="page" data-name="cod">
+    <!-- Static Navbar -->
+    <div class="navbar no-shadow">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner">
+        <div class="left">
+          <a class="link back">
+            <i class="icon icon-back"></i>
+            <span class="if-not-md">Back</span>
           </a>
         </div>
-
-        <div class="sheet-modal confirm-pin" style="height:auto;">
-          <div class="sheet-modal-inner">
-              <div class="display-flex padding justify-content-space-between">
-                <div style="font-size: 18px"><b>Jumlah Setor:</b></div>
-                <div style="font-size: 22px"><b>Rp. <span id="total_selected2"></span></b></div>
-              </div>
-              
-              <div class="block">
-                <div class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap align-items-center">
-                      <input type="password" name="pin" style="font-size: 18px" id="password" placeholder="Kode OTP">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="block">
-                <button class="col button button-large button-fill" id="confirm_setor" style="margin-bottom: 10px;">KONFIRMASI</button>
-                <button class="col button button-large button-bordered" id="send_otp">KIRIM OTP</button>
-              </div>
-          </div>
-        </div>
-
-        <div class="sheet-modal confirm-success" style="height:auto;">
-          <div class="sheet-modal-inner">
-              <div class="block">
-                <div class="row">
-                  <div class="col-100 text-align-center">
-                    <i class="icon material-icons color-green" style="font-size: 70px;">check_circle</i>
-                  </div>
-                  <div class="col-100 text-align-center">
-                    <h3>Setor Berhasil</h3>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="sheet-modal confirm-error" style="height:auto;">
-          <div class="sheet-modal-inner">
-              <div class="block">
-                <div class="row">
-                  <div class="col-100 text-align-center">
-                    <i class="icon material-icons color-red" style="font-size: 70px;">remove_circle</i>
-                  </div>
-                  <div class="col-100 text-align-center">
-                    <h3>Password Salah</h3>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-    
-    
+        <div class="title">Setoran COD</div>
+        <div class="right"></div>
       </div>
     </div>
-    </template>
-    <script>
-    export default {};
-    </script>
+    <div class="page-content hide-navbar-on-scroll">
+      <div class="block" id="all_finish" style="display: none;">
+        <div class="row">
+          <div class="col-100 text-align-center">
+            <i class="icon material-icons color-green" style="font-size: 100px;"
+              >check_circle</i
+            >
+          </div>
+          <div class="col-100 text-align-center">
+            <h1>Semua Beress..</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="block" id="nominal" style="display: none;">
+        <div class="row">
+          <div class="col-100" style="text-align: center;">
+            <small>Jumlah Setoran Anda</small>
+            <h1 class="no-margin-top">Rp. <span id="total"></span></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="block" id="list_trx" style="display: none;">
+        <div class="list media-list">
+          <ul id="trx"></ul>
+        </div>
+      </div>
+
+      <div
+        class="fab fab-extended fab-right-bottom"
+        id="setor_button"
+        style="display: none;position: fixed;"
+      >
+        <a class="sheet-open" href="#" data-sheet=".confirm-pin">
+          <i class="icon material-icons">arrow_forward</i>
+          <div class="fab-text">Setor <span id="total_selected"></span></div>
+        </a>
+      </div>
+
+      <div class="sheet-modal confirm-pin" style="height:auto;">
+        <div class="sheet-modal-inner">
+          <div class="display-flex padding justify-content-space-between">
+            <div style="font-size: 18px"><b>Jumlah Setor:</b></div>
+            <div style="font-size: 22px">
+              <b>Rp. <span id="total_selected2"></span></b>
+            </div>
+          </div>
+          <div class="display-flex padding justify-content-space-between">
+            <div style="font-size: 14px"><b>Kembalian:</b></div>
+            <div style="font-size: 18px">
+              <b>Rp. <span id="total_kembalian">0</span></b>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap align-items-center">
+                  <input
+                    type="password"
+                    name="pin"
+                    style="font-size: 18px"
+                    id="password"
+                    placeholder="Kode OTP"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <button
+              class="col button button-large button-fill"
+              id="confirm_setor"
+              style="margin-bottom: 10px;"
+            >
+              KONFIRMASI
+            </button>
+            <button
+              class="col button button-large button-bordered"
+              id="send_otp"
+            >
+              KIRIM OTP
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet-modal confirm-success" style="height:auto;">
+        <div class="sheet-modal-inner">
+          <div class="block">
+            <div class="row">
+              <div class="col-100 text-align-center">
+                <i
+                  class="icon material-icons color-green"
+                  style="font-size: 70px;"
+                  >check_circle</i
+                >
+              </div>
+              <div class="col-100 text-align-center">
+                <h3>Setor Berhasil</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sheet-modal confirm-error" style="height:auto;">
+        <div class="sheet-modal-inner">
+          <div class="block">
+            <div class="row">
+              <div class="col-100 text-align-center">
+                <i
+                  class="icon material-icons color-red"
+                  style="font-size: 70px;"
+                  >remove_circle</i
+                >
+              </div>
+              <div class="col-100 text-align-center">
+                <h3>Password Salah</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default {};
+</script>
