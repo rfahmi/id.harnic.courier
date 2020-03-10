@@ -1,0 +1,66 @@
+<template>
+<div class="page" data-name="dashboard">
+  <div class="page-content">
+
+    <div class="block">
+      <div class="row">
+        <div class="col-100" style="text-align: center;">
+          <h1>Hallo, <span id="kurir_nama"></span></h1>
+        </div>
+          <button class="button button-outline button-small button-round color-red" id="logout">Logout</button>
+      </div>
+    </div>
+
+    <div class="block-title">Scan Paket</div>
+    <div class="block">
+      <button id="scan" class="button button-raised button-fill button-round">SCAN</button>
+    </div>
+    <div class="block">
+      <button id="refresh" class="button button-raised button-fill button-round">REFRESH</button>
+    </div>
+    <div class="block">
+      <a href="/cod" id="cod" class="button button-raised button-fill button-round">Pesanan COD</a>
+    </div>
+    <div class="block">
+      <div class="card">
+        <div class="card-content">
+          <form id="pengiriman">
+          <div class="list no-hairlines-md">
+            <ul>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <input type="text" name="resi" id="resi" placeholder="Nomor Resi (Scan Only)" readonly="">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </form>
+
+        </div>
+        <div class="card-footer segmented segmented-raised">
+              <button class="button button-fill button-round color-blue" id="pickup">PickUp</button>
+              <button class="button button-fill button-round color-green" id="received">Received</button>
+        </div>
+      </div>
+    </div>
+
+  <div class="block-title">Paket Dipickup (<span id="total_pickedup"></span>)</div>
+  <div class="block">
+    <div class="list accordion-list">
+        <ul id="pickedup">
+
+        </ul>
+    </div>
+  </div>
+
+
+
+  </div>
+</div>
+</template>
+<script>
+export default {};
+</script>
